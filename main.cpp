@@ -32,19 +32,19 @@ int main(int argc, char ** argv){
     SDL_Init(SDL_INIT_VIDEO);
     SDL_Window * window = SDL_CreateWindow("Football",460, 250, 800, 400, 0);
     SDL_Renderer * renderer = SDL_CreateRenderer(window, -1, 0);
-    SDL_Surface * backpic = IMG_Load("goal.png");
-    SDL_Surface * goals[4] = {IMG_Load("redgoal.png"),IMG_Load("bluegoal.png"),IMG_Load("redsave.png"),IMG_Load("bluesave.png")};
-    SDL_Surface * balls[5] = { IMG_Load("ball1.png") , IMG_Load("ball2.png") , IMG_Load("ball3.png") , IMG_Load("ball4.png") ,IMG_Load("ball5.png")};
-    SDL_Surface * photos[16] = { IMG_Load("chooseteam.png") , IMG_Load("chooseteam2.png") , IMG_Load("C_vs_B.png") , IMG_Load("R_vs_B.png") ,IMG_Load("U_vs_B.png") ,
-    IMG_Load("R_vs_C.png") , IMG_Load("U_vs_C.png") , IMG_Load("U_vs_R.png") , IMG_Load("about.png") , IMG_Load("inf.png") , IMG_Load("pg.png") , IMG_Load("scoreboard.png") ,
-    IMG_Load("Barcelona_text.png") , IMG_Load("Real_Madrid_text.png") , IMG_Load("Man_City_text.png") , IMG_Load("Man_United_text.png") ,};
-    SDL_Surface * team_infos[4] = {IMG_Load("info_bc.png"),IMG_Load("info_rm.png"),IMG_Load("info_mu.png"),IMG_Load("info_mc.png")};
-    SDL_Surface * gosa[5] = {IMG_Load("bc_save.png"),IMG_Load("mc_save.png"),IMG_Load("mu_save.png"),IMG_Load("rm_save.png"),IMG_Load("score.png")};
-    SDL_Surface * number_goal[6] = {IMG_Load("photo0.png"),IMG_Load("photo1.png"),IMG_Load("photo2.png"),IMG_Load("photo3.png"),IMG_Load("photo4.png"),IMG_Load("photo5.png")};
-    SDL_Surface * number_goal2[6] = {IMG_Load("photo02.png"),IMG_Load("photo12.png"),IMG_Load("photo22.png"),IMG_Load("photo32.png"),IMG_Load("photo42.png"),IMG_Load("photo52.png")};
-    SDL_Surface * just_text[2] = {IMG_Load("aboutus_text2.png"),IMG_Load("info_text2.png")};
-    SDL_Surface * scores[6] = {IMG_Load("B_vs_C_score.png"),IMG_Load("B_vs_R_score.png"),IMG_Load("B_vs_U_score.png"),
-    IMG_Load("C_vs_R_score.png"),IMG_Load("C_vs_U.png"),IMG_Load("U_vs_R_score.ong")};
+    SDL_Surface * backpic = IMG_Load("assets/images/goal.png");
+    SDL_Surface * goals[4] = {IMG_Load("assets/images/redgoal.png"),IMG_Load("assets/images/bluegoal.png"),IMG_Load("assets/images/redsave.png"),IMG_Load("assets/images/bluesave.png")};
+    SDL_Surface * balls[5] = { IMG_Load("assets/images/ball1.png") , IMG_Load("assets/images/ball2.png") , IMG_Load("assets/images/ball3.png") , IMG_Load("assets/images/ball4.png") ,IMG_Load("assets/images/ball5.png")};
+    SDL_Surface * photos[16] = { IMG_Load("assets/images/chooseteam.png") , IMG_Load("assets/images/chooseteam2.png") , IMG_Load("assets/images/C_vs_B.png") , IMG_Load("assets/images/R_vs_B.png") ,IMG_Load("assets/images/U_vs_B.png") ,
+    IMG_Load("assets/images/R_vs_C.png") , IMG_Load("assets/images/U_vs_C.png") , IMG_Load("assets/images/U_vs_R.png") , IMG_Load("assets/images/about.png") , IMG_Load("assets/images/inf.png") , IMG_Load("assets/images/pg.png") , IMG_Load("assets/images/scoreboard.png") ,
+    IMG_Load("assets/images/Barcelona_text.png") , IMG_Load("assets/images/Real_Madrid_text.png") , IMG_Load("assets/images/Man_City_text.png") , IMG_Load("assets/images/Man_United_text.png") ,};
+    SDL_Surface * team_infos[4] = {IMG_Load("assets/images/info_bc.png"),IMG_Load("assets/images/info_rm.png"),IMG_Load("assets/images/info_mu.png"),IMG_Load("assets/images/info_mc.png")};
+    SDL_Surface * gosa[5] = {IMG_Load("assets/images/bc_save.png"),IMG_Load("assets/images/mc_save.png"),IMG_Load("assets/images/mu_save.png"),IMG_Load("assets/images/rm_save.png"),IMG_Load("assets/images/score.png")};
+    SDL_Surface * number_goal[6] = {IMG_Load("assets/images/photo0.png"),IMG_Load("assets/images/photo1.png"),IMG_Load("assets/images/photo2.png"),IMG_Load("assets/images/photo3.png"),IMG_Load("assets/images/photo4.png"),IMG_Load("assets/images/photo5.png")};
+    SDL_Surface * number_goal2[6] = {IMG_Load("assets/images/photo02.png"),IMG_Load("assets/images/photo12.png"),IMG_Load("assets/images/photo22.png"),IMG_Load("assets/images/photo32.png"),IMG_Load("assets/images/photo42.png"),IMG_Load("assets/images/photo52.png")};
+    SDL_Surface * just_text[2] = {IMG_Load("assets/images/aboutus_text2.png"),IMG_Load("assets/images/info_text2.png")};
+    SDL_Surface * scores[6] = {IMG_Load("assets/images/B_vs_C_score.png"),IMG_Load("assets/images/B_vs_R_score.png"),IMG_Load("assets/images/B_vs_U_score.png"),
+    IMG_Load("assets/images/C_vs_R_score.png"),IMG_Load("assets/images/C_vs_U.png"),IMG_Load("assets/images/U_vs_R_score.png")};
     SDL_Texture * finall_bc = SDL_CreateTextureFromSurface (renderer, scores[0]);
     SDL_Texture * finall_br = SDL_CreateTextureFromSurface (renderer, scores[1]);
     SDL_Texture * finall_bu = SDL_CreateTextureFromSurface (renderer, scores[2]);
@@ -113,14 +113,14 @@ int main(int argc, char ** argv){
     SDL_Rect photo42 = {5, 57, 20, 35};
     SDL_Rect photo52 = {5, 57, 20, 35};
     SDL_Rect texts = {100, 0, 600, 400};
-    Mix_Chunk *cheering = Mix_LoadWAV("cheering.wav");
-    Mix_Chunk *quite = Mix_LoadWAV("quite.wav");
-    Mix_Chunk *tagh = Mix_LoadWAV("tagh.wav");
-    Mix_Chunk *no_goal = Mix_LoadWAV("no_goal.wav");
+    Mix_Chunk *cheering = Mix_LoadWAV("assets/audios/cheering.wav");
+    Mix_Chunk *quite = Mix_LoadWAV("assets/audios/quite.wav");
+    Mix_Chunk *tagh = Mix_LoadWAV("assets/audios/tagh.wav");
+    Mix_Chunk *no_goal = Mix_LoadWAV("assets/audios/no_goal.wav");
     //system("@mode con cols=55 lines=40");
     system("clear");
     while(!quit_all){
-    SDL_Surface * menu_surface = IMG_Load("menu.png");
+    SDL_Surface * menu_surface = IMG_Load("assets/images/menu.png");
     SDL_Texture * menu_show = SDL_CreateTextureFromSurface(renderer, menu_surface);
     SDL_Rect menu_rect = { 0, 0, 800, 400 };
     SDL_RenderCopy(renderer, menu_show, NULL, &menu_rect);
@@ -318,9 +318,9 @@ int main(int argc, char ** argv){
             }
         }
     }
-    SDL_Surface * first = IMG_Load("info.png");
+    SDL_Surface * first = IMG_Load("assets/images/info.png");
     SDL_Texture * info = SDL_CreateTextureFromSurface(renderer, first);
-    SDL_Surface * second = IMG_Load("aboutus.png");
+    SDL_Surface * second = IMG_Load("assets/images/aboutus.png");
     SDL_Texture * aboutus = SDL_CreateTextureFromSurface(renderer, second);
     SDL_Rect info_b = { 0, 0, 800, 400 };
     SDL_Rect aboutus_b = { 0, 0, 800, 400 };
@@ -550,14 +550,14 @@ int main(int argc, char ** argv){
         SDL_RenderPresent(renderer);
         SDL_Delay(2000);
     }
-    SDL_Surface * gk_bc[9] = {IMG_Load("bc_1-2.png"),IMG_Load("bc_3-8-13.png"),IMG_Load("bc_4-5.png"),
-        IMG_Load("bc_6.png"),IMG_Load("bc_7-12.png"),IMG_Load("bc_9-14.png"),IMG_Load("bc_10.png"),IMG_Load("bc_11.png"),IMG_Load("bc_15.png")};
-    SDL_Surface * gk_mc[9] = {IMG_Load("mc_1-2.png"),IMG_Load("mc_3-8-13.png"),IMG_Load("mc_4-5.png"),
-        IMG_Load("mc_6.png"),IMG_Load("mc_7-12.png"),IMG_Load("mc_9-14.png"),IMG_Load("mc_10.png"),IMG_Load("mc_11.png"),IMG_Load("mc_15.png")};
-    SDL_Surface * gk_mu[9] = {IMG_Load("mu_1-2.png"),IMG_Load("mu_3-8-13.png"),IMG_Load("mu_4-5.png"),
-        IMG_Load("mu_6.png"),IMG_Load("mu_7-12.png"),IMG_Load("mu_9-14.png"),IMG_Load("mu_10.png"),IMG_Load("mu_11.png"),IMG_Load("mu_15.png")};
-    SDL_Surface * gk_rm[9] = {IMG_Load("rm_1-2.png"),IMG_Load("rm_3-8-13.png"),IMG_Load("rm_4-5.png"),
-        IMG_Load("rm_6.png"),IMG_Load("rm_7-12.png"),IMG_Load("rm_9-14.png"),IMG_Load("rm_10.png"),IMG_Load("rm_11.png"),IMG_Load("rm_15.png")};
+    SDL_Surface * gk_bc[9] = {IMG_Load("assets/images/bc_1-2.png"),IMG_Load("assets/images/bc_3-8-13.png"),IMG_Load("assets/images/bc_4-5.png"),
+        IMG_Load("assets/images/bc_6.png"),IMG_Load("assets/images/bc_7-12.png"),IMG_Load("assets/images/bc_9-14.png"),IMG_Load("assets/images/bc_10.png"),IMG_Load("assets/images/bc_11.png"),IMG_Load("assets/images/bc_15.png")};
+    SDL_Surface * gk_mc[9] = {IMG_Load("assets/images/mc_1-2.png"),IMG_Load("assets/images/mc_3-8-13.png"),IMG_Load("assets/images/mc_4-5.png"),
+        IMG_Load("assets/images/mc_6.png"),IMG_Load("assets/images/mc_7-12.png"),IMG_Load("assets/images/mc_9-14.png"),IMG_Load("assets/images/mc_10.png"),IMG_Load("assets/images/mc_11.png"),IMG_Load("assets/images/mc_15.png")};
+    SDL_Surface * gk_mu[9] = {IMG_Load("assets/images/mu_1-2.png"),IMG_Load("assets/images/mu_3-8-13.png"),IMG_Load("assets/images/mu_4-5.png"),
+        IMG_Load("assets/images/mu_6.png"),IMG_Load("assets/images/mu_7-12.png"),IMG_Load("assets/images/mu_9-14.png"),IMG_Load("assets/images/mu_10.png"),IMG_Load("assets/images/mu_11.png"),IMG_Load("assets/images/mu_15.png")};
+    SDL_Surface * gk_rm[9] = {IMG_Load("assets/images/rm_1-2.png"),IMG_Load("assets/images/rm_3-8-13.png"),IMG_Load("assets/images/rm_4-5.png"),
+        IMG_Load("assets/images/rm_6.png"),IMG_Load("assets/images/rm_7-12.png"),IMG_Load("assets/images/rm_9-14.png"),IMG_Load("assets/images/rm_10.png"),IMG_Load("assets/images/rm_11.png"),IMG_Load("assets/images/rm_15.png")};
     SDL_Rect first_gk = { 358, 190, 100, 125};
     if (choose_team_2 == 1){
         SDL_Texture * first_gk_show = SDL_CreateTextureFromSurface(renderer, gk_bc[1]);
