@@ -4,6 +4,14 @@ A 2D turn-based penalty shootout game developed with **C++** and **SDL2**.
 
 Players take turns shooting and defending penalties, with multiple teams available to choose from.
 
+## Screenshots
+
+![Main Menu](assets/images/menu.png)
+![Screenshot 1](assets/screenshots/screenshot1.jpg)
+![Screenshot 2](assets/screenshots/screenshot2.jpg)
+![Screenshot 3](assets/screenshots/screenshot3.jpg)
+![Screenshot 4](assets/screenshots/screenshot4.jpg)
+
 ## Features
 
 - Turn-based penalty shootout gameplay
